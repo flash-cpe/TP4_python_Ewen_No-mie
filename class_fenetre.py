@@ -12,21 +12,22 @@ class fenetre:
         self.fenetre = tk.Tk()
         self.fenetre.title("Casse Brique")
 
-        self.text_score = tk.Label(self.fenetre, text="Score :")
-        self.text_score.pack(side= "top", padx= "400", pady= "50")
+        self.frame = tk.Frame(self.fenetre)
+        self.frame.pack(side="top")
 
-        self.text_vie = tk.Label(self.fenetre, text="Vie :")
-        self.text_vie.pack(side= "top", padx= "50", pady= "50")
+        self.text_score = tk.Label(self.frame, text="Score :")
+        self.text_score.pack(padx= "200", pady= "5", side="right")
+
+        self.text_vie = tk.Label(self.frame, text="Vie :")
+        self.text_vie.pack(padx= "5", pady= "5", side="left")
 
         self.canvas=tk.Canvas(self.fenetre, width=650,height=650, bg='black')
         self.canvas.pack()
 
         self.boutonJeu = tk.Button(self.fenetre, text= "démarrer une partie")
 
-        self.bouton_fermer = tk.Button(self.fenetre, text= "quitter le jeu", fg= "red") # command= self.fermer()
-        self.bouton_fermer.pack(side="bottom", pady ="50")
-
-
+        self.bouton_fermer = tk.Button(self.fenetre, text= "quitter le jeu", fg= "red", command= self.fermer)
+        self.bouton_fermer.pack(side="bottom", pady ="5", padx= "5")
 
 
 
