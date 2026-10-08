@@ -1,3 +1,9 @@
+"""
+date : 8/10/2026
+auteur : Ewen MORIETTE , Noemie DETOT
+fonction : contient la classe de la fenetre du jeu
+a faire : le code
+"""
 import random
 import tkinter as tk
 
@@ -13,4 +19,3 @@ class fenetre:
 
     def fermer(self):
         self.fenetre.destroy()
-
