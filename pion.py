@@ -43,3 +43,4 @@ Canevas.pack(padx =5, pady =5)
 Button(Mafenetre, text ='Quitter', command = Mafenetre.destroy).pack(side=LEFT,padx=5,pady=5)
 
 Mafenetre.mainloop()
+#ress
