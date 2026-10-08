@@ -8,7 +8,7 @@ a faire : le code
 
 class brique() :
     def __inti__(self, hauteur, largeur, couleur) :
-        self.__hauteur = hauteur
-        self.__larguer = largeur
-        self.__couleur = couleur
+        self.hauteur = hauteur
+        self.larguer = largeur
+        self.couleur = couleur
         
