@@ -6,7 +6,9 @@ a faire : le code
 """
 
 
-class barre() :
-    def __inti__(self) :
-        return
-        
+class barre :
+    def __inti__(self, hauteur, largeur, couleur) :
+        self.__hauteur = hauteur
+        self.__larguer = largeur
+        self.__couleur = couleur
+    
