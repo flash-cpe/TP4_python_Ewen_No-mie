@@ -18,8 +18,15 @@ class fenetre:
         self.canvas=tk.Canvas(self.fenetre, width=650,height=650, bg='black')
         self.canvas.pack()
         self.boutonJeu = tk.Button(self.fentre, text= "démarrer une partie")
-        
+
 
     def fermer(self):
         self.fenetre.destroy()
+
+    def menu(self):
+        self.menu_Principal= tk.Menu(self.fenetre)
+        self.menu_principal.add_command(label="quitter",command=self.fermer)
+
+        
+
 
