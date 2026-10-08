@@ -14,4 +14,3 @@ class fenetre:
     def fermer(self):
         self.fenetre.destroy()
 
-
