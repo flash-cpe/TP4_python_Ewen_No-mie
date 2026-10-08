@@ -12,4 +12,3 @@ class barre :
         self.larguer = str(largeur)
         self.couleur = couleur
 
-    
