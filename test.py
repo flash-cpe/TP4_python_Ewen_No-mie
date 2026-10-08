@@ -6,4 +6,5 @@ a faire : le code
 """
 from class_fenetre import fenetre
 
-fenetre
+mw = fenetre()
+mw.fenetre.mainloop()
