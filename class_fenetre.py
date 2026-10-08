@@ -2,13 +2,14 @@
 date : 8/10/2026
 auteur : Ewen MORIETTE , Noemie DETOT
 fonction : contient la classe de la fenetre du jeu
-a faire : le code
+a faire : impossibilité de mettre la fonction clavier dans la class barre car il y un probleme d'importation circulaire
 """
 import random
 import tkinter as tk
 from class_barre import barre
 
-class fenetre:
+class fenetre :
+
     def __init__(self):
         self.barre_info = barre(20, 100, "blue")
         self.fenetre = tk.Tk()
@@ -59,17 +60,17 @@ class fenetre:
 
 
     def clavier(self, event):
-        """ Gestion de l'�v�nement Appui sur une touche du clavier """
-        touche = event.keysym
-        # d�placement vers la droite
-        if touche == "Right" :
-            self.PosX += 20
-        # d�placement vers la gauche
-        if touche == "Left":
-            self.PosX -= 20
-        # on dessine le pion � sa nouvelle position
-        self.canvas.coords(self.barre_creation, self.PosX -50, self.PosY -5, self.PosX +50, self.PosY +5)
-
+                """ Gestion de l'�v�nement Appui sur une touche du clavier """
+                touche = event.keysym
+                # d�placement vers la droite
+                if touche == "Right" :
+                    self.PosX += 20
+                # d�placement vers la gauche
+                if touche == "Left":
+                    self.PosX -= 20
+                # on dessine le pion � sa nouvelle position
+                self.canvas.coords(self.barre_creation, self.PosX -50, self.PosY -5, self.PosX +50, self.PosY +5)
+        
     
 
         
