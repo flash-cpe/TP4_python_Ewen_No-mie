@@ -4,59 +4,25 @@ auteur : Ewen MORIETTE , Noemie DETOT
 fonction : contient la class barre
 a faire : le code
 """
-
+from class_fenetre import fenetre
 
 class barre :
+    
     def __init__(self, hauteur, largeur, couleur) :
         self.hauteur = str(hauteur)
         self.larguer = str(largeur)
         self.couleur = couleur
+        self.mw = fenetre()
 
-
-"""
-# script pion.py
-#(C) Fabrice Sinc�re
-from tkinter import *
-
-def Clavier(event):
-     Gestion de l'�v�nement Appui sur une touche du clavier 
-    global PosX,PosY
-    touche = event.keysym
-    print (touche)
-    # d�placement vers le haut
-    if touche == 'a':
-        PosY -= 20
-    # d�placement vers le bas
-    if touche == 'q':
-        PosY += 20
-    # d�placement vers la droite
-    if touche == 'm':
-        PosX += 20
-    # d�placement vers la gauche
-    if touche == 'l':
-        PosX -= 20
-    # on dessine le pion � sa nouvelle position
-    Canevas.coords(Pion,PosX -10, PosY -10, PosX +10, PosY +10)
-
-# Cr�ation de la fen�tre principale
-Mafenetre = Tk()
-Mafenetre.title('Pion')
-
-# position initiale du pion
-PosX = 230
-PosY = 150
-
-# Cr�ation d'un widget Canvas (zone graphique)
-Largeur = 480
-Hauteur = 320
-Canevas = Canvas(Mafenetre, width = Largeur, height =Hauteur, bg ='white')
-Pion = Canevas.create_oval(PosX-10,PosY-10,PosX+10,PosY+10,width=5,outline='black',fill='red')
-Canevas.focus_set()
-Canevas.bind('<Key>',Clavier)
-Canevas.pack(padx =5, pady =5)
-
-# Cr�ation d'un widget Button (bouton Quitter)
-Button(Mafenetre, text ='Quitter', command = Mafenetre.destroy).pack(side=LEFT,padx=5,pady=5)
-
-Mafenetre.mainloop()
-"""
+    def clavier(self, event):
+            """ Gestion de l'�v�nement Appui sur une touche du clavier """
+            touche = event.keysym
+            # d�placement vers la droite
+            if touche == "Right" :
+                self.mw.PosX += 20
+            # d�placement vers la gauche
+            if touche == "Left":
+                self.mw.PosX -= 20
+            # on dessine le pion � sa nouvelle position
+            self.mw.canvas.coords(self.mw.barre_creation, self.mw.PosX -50, self.mw.PosY -5, self.mw.PosX +50, self.mw.PosY +5)
+    

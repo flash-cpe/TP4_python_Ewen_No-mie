@@ -6,9 +6,9 @@ a faire : le code
 """
 
 
-class brique() :
-    def __inti__(self, hauteur, largeur, couleur) :
-        self.__hauteur = hauteur
-        self.__larguer = largeur
-        self.__couleur = couleur
-        
+class brique :
+    def __init__(self, hauteur, largeur, couleur) :
+        self.hauteur = hauteur
+        self.larguer = largeur
+        self.couleur = couleur
+

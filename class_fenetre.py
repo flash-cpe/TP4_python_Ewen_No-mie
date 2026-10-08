@@ -8,7 +8,8 @@ import random
 import tkinter as tk
 from class_barre import barre
 
-class fenetre:
+class fenetre :
+    
     def __init__(self):
         self.barre_info = barre(20, 100, "blue")
         self.fenetre = tk.Tk()
@@ -31,7 +32,7 @@ class fenetre:
 
         self.barre_creation = self.canvas.create_rectangle(self.PosX-50, self.PosY-5, self.PosX+50, self.PosY+5, outline= self.barre_info.couleur, fill= self.barre_info.couleur)
         self.canvas.focus_set()
-        self.canvas.bind('<Key>',self.clavier)
+        self.canvas.bind('<Key>',self.barre_info.clavier())
         self.canvas.pack()
 
         self.bouton_Jeu = tk.Button(self.fenetre, text= "démarrer une partie")
@@ -58,17 +59,6 @@ class fenetre:
 
 
 
-    def clavier(self, event):
-        """ Gestion de l'�v�nement Appui sur une touche du clavier """
-        touche = event.keysym
-        # d�placement vers la droite
-        if touche == "Right" :
-            self.PosX += 20
-        # d�placement vers la gauche
-        if touche == "Left":
-            self.PosX -= 20
-        # on dessine le pion � sa nouvelle position
-        self.canvas.coords(self.barre_creation, self.PosX -50, self.PosY -5, self.PosX +50, self.PosY +5)
 
     
 
