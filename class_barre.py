@@ -7,9 +7,9 @@ a faire : le code
 
 
 class barre :
-    def __inti__(self, hauteur, largeur, couleur) :
-        self.hauteur = hauteur
-        self.larguer = largeur
+    def __init__(self, hauteur, largeur, couleur) :
+        self.hauteur = str(hauteur)
+        self.larguer = str(largeur)
         self.couleur = couleur
 
 

@@ -7,7 +7,7 @@ a faire : le code
 
 
 class balle() :
-    def __inti__(self, rayon, centre) :
+    def __init__(self, rayon, centre) :
         self.__rayon = rayon
         self.__centre = centre
         self.__x = centre[0]
