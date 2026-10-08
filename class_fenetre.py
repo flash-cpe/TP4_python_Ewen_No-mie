@@ -32,7 +32,7 @@ class fenetre :
 
         self.barre_creation = self.canvas.create_rectangle(self.PosX-50, self.PosY-5, self.PosX+50, self.PosY+5, outline= self.barre_info.couleur, fill= self.barre_info.couleur)
         self.canvas.focus_set()
-        self.canvas.bind('<Key>',self.barre_info.clavier())
+        self.canvas.bind('<Key>',self.clavier)
         self.canvas.pack()
 
         self.bouton_Jeu = tk.Button(self.fenetre, text= "démarrer une partie")
