@@ -8,7 +8,7 @@ import random
 import math
 import tkinter as tk
 
-class balle() :
+class balle :
     def __init__(self, rayon, centre,hauteur, largeur) :
         self.rayon = rayon
         self.centre = centre
