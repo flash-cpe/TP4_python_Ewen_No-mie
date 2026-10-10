@@ -5,7 +5,7 @@ fonction : contient la class barre
 a faire :
 """
 
-class barre :
+class raquette :
     """
     creation de la classe barre, qui permet d'avoir les information de dimension et de couleur de la barre
     """

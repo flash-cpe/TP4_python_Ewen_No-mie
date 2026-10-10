@@ -3,15 +3,20 @@ date : 8/10/2026
 auteur : Ewen MORIETTE , Noemie DETOT
 fonction : contient la classe de la fenetre du jeu
 a faire : impossibilité de mettre la fonction clavier dans la class barre car il y un probleme d'importation circulaire
+Le jeu devra présenter une implémentation de liste, une de file et une de pile 
+fichier readme indiquant les règles du jeu et les spécificités de votre implémentation
+
 """
+
+
 import random
 import tkinter as tk
-from class_barre import barre
+from class_barre import raquette
 
 class fenetre :
 
     def __init__(self):
-        self.barre_info = barre(10, 100, "blue")
+        self.raquette_info = raquette(10, 100, "blue")
         self.fenetre = tk.Tk()
         self.fenetre.title("Casse Brique")
 
@@ -30,12 +35,12 @@ class fenetre :
         self.PosX = 320
         self.PosY = 620
 
-        self.barre = self.canvas.create_rectangle(self.PosX - (self.barre_info.larguer / 2),
-                                                  self.PosY - (self.barre_info.hauteur / 2),
-                                                  self.PosX + (self.barre_info.larguer / 2),
-                                                  self.PosY + (self.barre_info.hauteur / 2),
-                                                  outline= self.barre_info.couleur,
-                                                  fill= self.barre_info.couleur
+        self.raquette = self.canvas.create_rectangle(self.PosX - (self.raquette_info.larguer / 2),
+                                                  self.PosY - (self.raquette_info.hauteur / 2),
+                                                  self.PosX + (self.raquette_info.larguer / 2),
+                                                  self.PosY + (self.raquette_info.hauteur / 2),
+                                                  outline= self.raquette_info.couleur,
+                                                  fill= self.raquette_info.couleur
                                                   )
         self.canvas.focus_set()
         self.canvas.bind('<Key>', self.clavier)
@@ -71,23 +76,23 @@ class fenetre :
                 touche = event.keysym
                 
                 # d�placement vers la droite
-                if touche == "Right" and (self.PosX + 20 + self.barre_info.larguer / 2) < self.largeur_canvas :
+                if touche == "Right" and (self.PosX + 20 + self.raquette_info.larguer / 2) < self.largeur_canvas :
                     self.PosX += 20
                 elif touche == "Right" :
-                     self.PosX += self.largeur_canvas - (self.PosX + self.barre_info.larguer / 2)
+                     self.PosX += self.largeur_canvas - (self.PosX + self.raquette_info.larguer / 2)
                 
                 # d�placement vers la gauche
-                if touche == "Left" and (self.PosX - 20 - self.barre_info.larguer / 2) > 0 :
+                if touche == "Left" and (self.PosX - 20 - self.raquette_info.larguer / 2) > 0 :
                     self.PosX -= 20
                 elif touche == "Left" :
-                    self.PosX -= (self.PosX - self.barre_info.larguer / 2)
+                    self.PosX -= (self.PosX - self.raquette_info.larguer / 2)
                 
                 # on dessine le pion � sa nouvelle position
-                self.canvas.coords(self.barre,
-                                   self.PosX - (self.barre_info.larguer / 2),
-                                   self.PosY - (self.barre_info.hauteur / 2),
-                                   self.PosX + (self.barre_info.larguer / 2),
-                                   self.PosY + (self.barre_info.hauteur / 2)
+                self.canvas.coords(self.raquette,
+                                   self.PosX - (self.raquette_info.larguer / 2),
+                                   self.PosY - (self.raquette_info.hauteur / 2),
+                                   self.PosX + (self.raquette_info.larguer / 2),
+                                   self.PosY + (self.raquette_info.hauteur / 2)
                                    )
         
     
