@@ -11,7 +11,11 @@ fichier readme indiquant les règles du jeu et les spécificités de votre impl�
 
 import random
 import tkinter as tk
+
 from class_barre import raquette
+from class_gestion_brique import gestion_brique
+
+
 
 class fenetre :
 
@@ -39,7 +43,6 @@ class fenetre :
                                                   self.PosY - (self.raquette_info.hauteur / 2),
                                                   self.PosX + (self.raquette_info.larguer / 2),
                                                   self.PosY + (self.raquette_info.hauteur / 2),
-                                                  outline= self.raquette_info.couleur,
                                                   fill= self.raquette_info.couleur
                                                   )
         self.canvas.focus_set()
@@ -51,6 +54,19 @@ class fenetre :
 
         self.bouton_fermer = tk.Button(self.fenetre, text = "quitter le jeu", fg = "red", command = self.fermer)
         self.bouton_fermer.pack(side = "bottom", pady = "5", padx = "5")
+
+
+        self.gestion_briques = gestion_brique(self.canvas)
+        self.gestion_briques.creer_brique(5, 5, 20 ,100, 10, "green", 5, 6)
+        
+  
+
+
+
+
+
+
+
 
 
 
